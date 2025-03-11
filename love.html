@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unlock Your Birthday Letter</title>
+    <!-- Google Fonts for a modern, elegant look -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #e91e63;
+        --secondary-color: #d81b60;
+        --bg-gradient-start: #fbc2eb;
+        --bg-gradient-end: #a6c1ee;
+        --container-bg: #ffffff;
+        --text-color: #333;
+      }
+      /* Global Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* Body Style */
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          135deg,
+          var(--bg-gradient-start),
+          var(--bg-gradient-end)
+        );
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        color: var(--text-color);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      /* Card Style */
+      .card {
+        background: var(--container-bg);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        max-width: 800px;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 1s forwards;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hidden {
+        display: none;
+      }
+      /* Heading Style */
+      h1 {
+        text-align: center;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        font-size: 2.5em;
+      }
+      /* Photo Holder Styles */
+      .photo-holder {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .photo-holder img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      /* Paragraph and Signature */
+      p {
+        margin-bottom: 20px;
+        font-size: 1.1em;
+        text-align: justify;
+      }
+      .signature {
+        text-align: right;
+        font-style: italic;
+        margin-top: 30px;
+        font-size: 1.2em;
+      }
+      strong {
+        color: var(--secondary-color);
+      }
+      em {
+        font-style: italic;
+        color: #555;
+      }
+      /* PIN Container Style */
+      #pinContainer {
+        text-align: center;
+        background: var(--container-bg);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+      }
+      #pinInput {
+        width: 80%;
+        max-width: 300px;
+        padding: 12px;
+        font-size: 1em;
+        border: 2px solid var(--primary-color);
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+      #pinInput:focus {
+        border-color: var(--secondary-color);
+      }
+      #pinButton {
+        margin-top: 20px;
+        padding: 12px 30px;
+        font-size: 1.1em;
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      #pinButton:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+      #errorMsg {
+        margin-top: 10px;
+        color: red;
+        display: none;
+      }
+      /* Slide Down Animation for the Letter */
+      .slideDown {
+        animation: slideDown 1s forwards;
+      }
+      @keyframes slideDown {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PIN Input Card -->
+    <div id="pinContainer" class="card">
+      <h1>Enter the PIN</h1>
+      <p>Please enter the PIN to unlock your birthday letter:</p>
+      <input type="text" id="pinInput" placeholder="Enter PIN" />
+      <br />
+      <button id="pinButton">Next</button>
+      <p id="errorMsg">Incorrect PIN. Please try again.</p>
+    </div>
+
+    <!-- Hidden Letter Card -->
+    <div id="letterContainer" class="card hidden">
+      <h1>Happy Birthday, my love, my Chariz Faith Paa Eduarte! ❤️</h1>
+
+      <!-- Photo Holder -->
+      <div class="photo-holder">
+        <img src="assets/img/love.jpg" alt="Photo Placeholder" />
+      </div>
+
+      <p>
+        Today is such a special day — because it’s the day the world was blessed
+        with someone so beautiful, kind-hearted, and amazing. And for me, it’s
+        not just a day to celebrate your birth but a day to be thankful that I
+        met you — the love of my life, my partner, my forever. I wouldn’t have
+        experienced this kind of deep love and happiness if it wasn’t for you,
+        and I’m so grateful that fate brought us together.
+      </p>
+      <p>
+        It’s funny how life works, right? I can still clearly remember how our
+        story started. It was back when we were just mutual friends — we hung
+        out, laughed, and had small talks because of our common friends. And
+        honestly? I already had a crush on you back then. So you know what I
+        did? I teased you — a lot. You were so easy to annoy, and I found it so
+        cute every time you got mad at me. That’s how we became frenemies — I’d
+        tease you just to get your attention, and you’d get annoyed (but deep
+        down I was just falling for you even more). But of course, I didn’t
+        always do that since we were in different courses, and I knew we lived
+        in two different worlds — or so I thought.
+      </p>
+      <p>
+        Then I gathered my courage to confess my feelings to you, hoping you’d
+        feel the same way. But… I got turned down. Haha! I thought it was over,
+        especially since you were in a complicated relationship at that time. So
+        I accepted it and just told myself, “Okay, maybe it’s not meant to be.”
+      </p>
+      <p>
+        Time passed and things changed. I got into a relationship with someone
+        else, and I honestly thought I had moved on. But here’s the twist — that
+        relationship became so complicated. The girl I was with turned out to be
+        so obsessed with me that even my girl friends, including you, made her
+        jealous. I still remember that one time we crossed paths, and I just
+        pretended not to see you because I didn’t want to cause any trouble with
+        my then-relationship. It was honestly one of the hardest things — seeing
+        you but acting like you didn’t exist when in fact, you were still on my
+        mind.
+      </p>
+      <p>
+        But you know what they say — fate has its way of making two people find
+        each other again. After my relationship ended, I stayed single and kept
+        my distance from everyone. Then suddenly, boom, you replied to my
+        Facebook My Day — and that moment changed everything. You just asked me
+        something simple about where our student org purchased the lanyard, but
+        deep down, I felt something stir again inside me. It didn’t end there;
+        we started having random hugot-hugot conversations until one day, we
+        started talking about being choosy in relationships. I still remember
+        that conversation so clearly because I told you, “Ikaw lang naman choosy
+        eh, dalawang beses na nga akong nag-confess sayo, diba?” Haha!
+      </p>
+      <p>
+        And then, in the most unexpected but perfect way, I told you “Kung gusto
+        mo talaga, bakit hindi natin subukan ngayon? Magging na tayo.” I didn’t
+        expect you’d actually give us a chance. And when we finally met at
+        Boulevard with your friends and hugged each other, I knew deep down that
+        this wasn’t just a random fling — this was the beginning of something
+        real. But I could also feel that deep inside you, you thought our
+        relationship wouldn’t last long. Maybe because we started so randomly,
+        or maybe you thought I wasn’t serious. But look at us now — 5 years and
+        counting. Who would’ve thought that from being frenemies, getting
+        rejected, crossing paths, ignoring each other, and rekindling our
+        connection — we’d end up here, deeply in love and still choosing each
+        other every day.
+      </p>
+      <p>
+        Love, I honestly wouldn’t trade this love story for anything else. It’s
+        so unique, so unexpected, and so genuine — just like my love for you.
+        And that’s why I treasure you so much. Every moment we have — our
+        <em>kulitan</em>, our deep talks, our laughter, our random hugot — I
+        cherish all of it. I’ve never been happier in my life than when I’m with
+        you. Your smile, your humor, your pure heart — those are the things I
+        fell in love with and will continue to fall for, over and over again.
+        You have no idea how much you mean to me, love. You didn’t just become
+        my girlfriend — you became my best friend, my home, my peace, and my
+        dream all at once.
+      </p>
+      <p>
+        Love, I honestly wouldn’t trade this love story for anything else. It’s
+        so unique, so unexpected, and so genuine — just like my love for you.
+        And that’s why I treasure you so much. Every moment we have — our
+        kulitan, our deep talks, our laughter— I cherish all of it. I’ve never
+        been happier in my life than when I’m with you. Your smile, your humor,
+        your pure heart — those are the things I fell in love with and will
+        continue to fall for, over and over again. You have no idea how much you
+        mean to me, love. You didn’t just become my girlfriend — you became my
+        best friend, my home, my peace, and my dream all at once.
+      </p>
+      <p>
+        And now that we’ve built so many memories together, I can’t help but
+        dream of the future — a future where you and I would finally tie the
+        knot and build a beautiful family together. InshaAllah, one day I’ll
+        finally put that ring on your finger and call you my wife. I dream of
+        waking up next to you every day, cooking breakfast together, having our
+        little family, and growing old together. I promise you, love, that day
+        will come — and when it does, I’ll look at you and say, “See? I told you
+        we were meant to be.”
+      </p>
+      <p>
+        I’m also so proud of you, love — for everything that you do and for
+        everything you dream of becoming. I know deep in my heart that you’ll
+        become an Architect inshaAllah. I see your hard work, your sacrifice
+        each day, and your determination — and I admire you so much for it. I’ll
+        always be your biggest fan, your loudest cheerleader, and your constant
+        supporter. One day, when I see you in that white hard hat, designing
+        beautiful structures, and making your dreams come true — I’ll stand
+        there smiling, so proud that I get to call you mine.
+      </p>
+      <p>
+        But more than anything, I want you to know how grateful I am for you.
+        Thank you for loving me despite my flaws, for being patient with me
+        during my rough days, for staying even when things got tough, and for
+        never giving up on us. I know we’ve had our share of misunderstandings
+        and rough patches, but you never gave up — you chose us every time. And
+        that’s something I will always be thankful for. You’ve shown me what
+        real love is — a love that stays, fights, and grows.
+      </p>
+      <p>
+        And so, on your special day, I just want you to be the happiest. I hope
+        you know how deeply loved, appreciated, and treasured you are — not just
+        by me, but by everyone around you. But most of all, I hope you know that
+        I will love you forever. Like seriously, panghabang-buhay na ‘to. You’re
+        not just my girlfriend — you’re my future wife, my partner, my soulmate,
+        and my greatest love.
+      </p>
+      <p>
+        Happy Birthday again, my love. 💖 Thank you for giving me a chance 5
+        years ago despite our rocky past. I’m so thankful that you chose me. And
+        I promise you, I will keep choosing you — every single day, for the rest
+        of my life. More travels, more hugots, more deep talks, more laughter —
+        and inshaAllah, more years of love and life together. Someday, we’ll
+        look back and say, “We really made it through everything — and here we
+        are now, stronger than ever.”
+      </p>
+      <p class="signature">
+        I love you endlessly, love. Happy Birthday, my future wife, my forever,
+        my greatest blessing. ❤️
+      </p>
+    </div>
+
+    <script>
+      // PIN functionality
+      const pinButton = document.getElementById("pinButton");
+      const pinInput = document.getElementById("pinInput");
+      const errorMsg = document.getElementById("errorMsg");
+      const pinContainer = document.getElementById("pinContainer");
+      const letterContainer = document.getElementById("letterContainer");
+
+      pinButton.addEventListener("click", function () {
+        if (pinInput.value === "111619") {
+          pinContainer.style.display = "none";
+          letterContainer.classList.remove("hidden");
+          letterContainer.classList.add("slideDown");
+        } else {
+          errorMsg.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
